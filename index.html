@@ -92,7 +92,7 @@
   </style>
 </head>
 <body class="antialiased selection:bg-emerald-100 selection:text-emerald-900">
-  <!-- Sticky Top Header (Clean Editorial Marketplace Style) -->
+  <!-- Sticky Top Header -->
   <header class="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-slate-200/90">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
       <!-- Brand Identity -->
@@ -119,26 +119,15 @@
         </button>
       </div>
 
-      <!-- Center Workspace Navigation -->
-      <nav class="hidden md:flex items-center gap-1 bg-slate-100 p-1 rounded-full border border-slate-200/80" aria-label="Primary Navigation">
-        <button
-          type="button"
-          data-tab="shop"
-          class="nav-pill px-4 py-1.5 rounded-full text-xs font-semibold bg-slate-900 text-white transition cursor-pointer"
-        >
-          Explore
-        </button>
+      <!-- Account / Auth Controls -->
+      <div class="flex items-center gap-2 shrink-0" id="authBar">
         <button
           type="button"
           data-tab="seller"
-          class="nav-pill px-4 py-1.5 rounded-full text-xs font-semibold text-slate-600 hover:text-slate-900 transition cursor-pointer"
+          class="nav-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-800 whitespace-nowrap transition cursor-pointer"
         >
           Sell on GamCart
         </button>
-      </nav>
-
-      <!-- Account / Auth Controls -->
-      <div class="flex items-center gap-2 shrink-0" id="authBar">
         <span
           id="userLabel"
           class="hidden lg:inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200"
@@ -162,24 +151,6 @@
         </button>
       </div>
     </div>
-
-    <!-- Mobile Workspace Navigation Bar -->
-    <div class="md:hidden border-t border-slate-100 bg-white px-4 py-2 flex items-center gap-2 overflow-x-auto no-scrollbar">
-      <button
-        type="button"
-        data-tab="shop"
-        class="nav-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-900 text-white whitespace-nowrap cursor-pointer"
-      >
-        Explore
-      </button>
-      <button
-        type="button"
-        data-tab="seller"
-        class="nav-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 whitespace-nowrap cursor-pointer"
-      >
-        Sell on GamCart
-      </button>
-    </div>
   </header>
 
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
@@ -196,7 +167,7 @@
               Discover trusted local shops near you.
             </h1>
             <p class="text-sm sm:text-base text-slate-600 mt-1.5 max-w-2xl">
-              Browse everyday essentials, tech, fashion, and home goods across Jabang, Brusubi, Serrekunda, Salagi, and Greater Banjul—and message or call sellers directly.
+              Browse everyday essentials, tech, fashion, and home goods across Jabang, Brusubi, Serrekunda, Bakau, Brikama, Sukuta, Fajara, Kotu, Kololi, Latrikunda, Salagi, and Greater Banjul—and message or call sellers directly.
             </p>
           </div>
           <div class="flex items-center gap-2 text-xs text-slate-600 bg-slate-50 border border-slate-200/80 rounded-2xl px-3.5 py-2.5 self-start lg:self-auto">
@@ -214,6 +185,37 @@
               placeholder="Search items, shops, or descriptions (e.g., Charger, Tee, Bundle)..."
               class="field-control"
             />
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <div class="flex items-center gap-1.5 bg-slate-50 border border-slate-200 rounded-xl px-2.5 py-1.5">
+              <span class="text-[11px] font-bold text-slate-500">GMD</span>
+              <input
+                type="number"
+                id="minPriceInput"
+                min="0"
+                step="any"
+                placeholder="Min"
+                aria-label="Minimum price in GMD"
+                class="w-20 bg-white border border-slate-200 rounded-lg px-2 py-1 text-xs font-semibold text-slate-900 focus:outline-none focus:border-emerald-700"
+              />
+              <span class="text-xs font-bold text-slate-400">–</span>
+              <input
+                type="number"
+                id="maxPriceInput"
+                min="0"
+                step="any"
+                placeholder="Max"
+                aria-label="Maximum price in GMD"
+                class="w-20 bg-white border border-slate-200 rounded-lg px-2 py-1 text-xs font-semibold text-slate-900 focus:outline-none focus:border-emerald-700"
+              />
+              <button
+                type="button"
+                id="clearPriceFilterBtn"
+                class="px-2 py-1 rounded-lg text-[11px] font-semibold text-slate-600 hover:bg-slate-200 transition cursor-pointer"
+              >
+                Reset
+              </button>
+            </div>
           </div>
           <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5" id="areaFilterBar">
             <button
@@ -253,6 +255,55 @@
             </button>
             <button
               type="button"
+              data-area="Bakau"
+              class="area-pill px-3.5 py-2 rounded-full text-xs font-medium bg-slate-100 text-slate-700 hover:bg-slate-200 whitespace-nowrap transition cursor-pointer"
+            >
+              Bakau
+            </button>
+            <button
+              type="button"
+              data-area="Brikama"
+              class="area-pill px-3.5 py-2 rounded-full text-xs font-medium bg-slate-100 text-slate-700 hover:bg-slate-200 whitespace-nowrap transition cursor-pointer"
+            >
+              Brikama
+            </button>
+            <button
+              type="button"
+              data-area="Sukuta"
+              class="area-pill px-3.5 py-2 rounded-full text-xs font-medium bg-slate-100 text-slate-700 hover:bg-slate-200 whitespace-nowrap transition cursor-pointer"
+            >
+              Sukuta
+            </button>
+            <button
+              type="button"
+              data-area="Fajara"
+              class="area-pill px-3.5 py-2 rounded-full text-xs font-medium bg-slate-100 text-slate-700 hover:bg-slate-200 whitespace-nowrap transition cursor-pointer"
+            >
+              Fajara
+            </button>
+            <button
+              type="button"
+              data-area="Kotu"
+              class="area-pill px-3.5 py-2 rounded-full text-xs font-medium bg-slate-100 text-slate-700 hover:bg-slate-200 whitespace-nowrap transition cursor-pointer"
+            >
+              Kotu
+            </button>
+            <button
+              type="button"
+              data-area="Kololi"
+              class="area-pill px-3.5 py-2 rounded-full text-xs font-medium bg-slate-100 text-slate-700 hover:bg-slate-200 whitespace-nowrap transition cursor-pointer"
+            >
+              Kololi
+            </button>
+            <button
+              type="button"
+              data-area="Latrikunda"
+              class="area-pill px-3.5 py-2 rounded-full text-xs font-medium bg-slate-100 text-slate-700 hover:bg-slate-200 whitespace-nowrap transition cursor-pointer"
+            >
+              Latrikunda
+            </button>
+            <button
+              type="button"
               data-area="Greater Banjul Area"
               class="area-pill px-3.5 py-2 rounded-full text-xs font-medium bg-slate-100 text-slate-700 hover:bg-slate-200 whitespace-nowrap transition cursor-pointer"
             >
@@ -262,7 +313,7 @@
         </div>
       </div>
 
-      <!-- Category Filter Strip (Kunda Stays Style) -->
+      <!-- Category Filter Strip -->
       <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1" id="categoryFilterBar">
         <button
           type="button"
@@ -312,7 +363,7 @@
       <div id="productList" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"></div>
     </section>
 
-    <!-- PRODUCT DETAIL MODAL (BUYER CLOSER LOOK) -->
+    <!-- PRODUCT DETAIL / EDIT MODAL -->
     <div id="productDetailModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/60 backdrop-blur-xs p-4">
       <div id="productDetailContent" class="editorial-card w-full max-w-2xl rounded-3xl overflow-hidden max-h-[90vh] overflow-y-auto relative"></div>
     </div>
@@ -324,7 +375,7 @@
           <div>
             <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900">List a Product on GamCart</h2>
             <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
-              Sellers keep <span class="text-emerald-700 font-semibold">99%</span> of item sales; GamCart takes <span class="text-amber-700 font-semibold">1%</span>.
+              Post your item with photos and connect directly with buyers on WhatsApp or phone.
             </p>
           </div>
           <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200 self-start sm:self-auto">
@@ -366,6 +417,13 @@
               <option value="Brusubi">Brusubi</option>
               <option value="Serrekunda">Serrekunda</option>
               <option value="Salagi">Salagi</option>
+              <option value="Bakau">Bakau</option>
+              <option value="Brikama">Brikama</option>
+              <option value="Sukuta">Sukuta</option>
+              <option value="Fajara">Fajara</option>
+              <option value="Kotu">Kotu</option>
+              <option value="Kololi">Kololi</option>
+              <option value="Latrikunda">Latrikunda</option>
               <option value="Greater Banjul Area">Greater Banjul Area</option>
             </select>
           </div>
@@ -389,42 +447,52 @@
           <div class="sm:col-span-2 space-y-2.5 bg-slate-50 border border-slate-200 rounded-2xl p-4">
             <div class="flex items-center justify-between gap-2">
               <label class="block text-xs font-bold text-slate-800">
-                Product Photo <span class="text-emerald-700">*Required</span>
+                Product Photos <span class="text-emerald-700">*Required (1–6 photos)</span>
               </label>
-              <span class="text-[11px] font-medium text-slate-500">Upload photo OR paste image URL</span>
+              <span class="text-[11px] font-medium text-slate-500">Select multiple files or add image URLs</span>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label for="pImageFile" class="block text-[11px] font-medium text-slate-600 mb-1">Upload from Device</label>
+                <label for="pImageFile" class="block text-[11px] font-medium text-slate-600 mb-1">Upload from Device (Multiple)</label>
                 <input
                   type="file"
                   id="pImageFile"
                   accept="image/*"
+                  multiple
                   class="field-control text-xs file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-emerald-700 file:text-white hover:file:bg-emerald-800"
                 />
               </div>
 
               <div>
-                <label for="pImage" class="block text-[11px] font-medium text-slate-600 mb-1">Or Image URL (https://...)</label>
-                <input type="url" id="pImage" placeholder="https://example.com/product.jpg" class="field-control" />
+                <label for="pImage" class="block text-[11px] font-medium text-slate-600 mb-1">Add Image URL (https://...)</label>
+                <div class="flex gap-2">
+                  <input type="url" id="pImage" placeholder="https://example.com/product.jpg" class="field-control" />
+                  <button
+                    type="button"
+                    id="addImageUrlBtn"
+                    class="px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-900 hover:bg-slate-800 text-white whitespace-nowrap transition cursor-pointer"
+                  >
+                    Add URL
+                  </button>
+                </div>
               </div>
             </div>
 
-            <div id="pImagePreviewBox" class="hidden pt-2 items-center gap-3">
-              <img id="pImagePreview" src="" alt="Selected product preview" class="w-16 h-16 rounded-xl object-cover border border-slate-300 bg-white" />
-              <div class="text-xs text-slate-700">
-                <div class="font-semibold text-emerald-800">Photo ready for listing</div>
-                <button type="button" id="clearPhotoBtn" class="text-[11px] font-medium text-rose-600 hover:underline mt-0.5 cursor-pointer">
-                  Remove photo
+            <div id="pImageGalleryPreview" class="hidden pt-2">
+              <div class="flex items-center justify-between mb-2">
+                <span id="pPhotoCountLabel" class="text-xs font-semibold text-emerald-800">0 photos attached</span>
+                <button type="button" id="clearPhotoBtn" class="text-[11px] font-medium text-rose-600 hover:underline cursor-pointer">
+                  Clear all photos
                 </button>
               </div>
+              <div id="pImageThumbs" class="flex flex-wrap gap-2.5"></div>
             </div>
           </div>
 
           <div class="sm:col-span-2 flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2">
-            <div id="sellerPayoutPreview" class="text-xs text-slate-600">
-              Enter a price to preview 99% seller payout &amp; 1% GamCart fee.
+            <div class="text-xs text-slate-600">
+              Direct buyer contact via WhatsApp &amp; phone call.
             </div>
             <button
               type="submit"
@@ -437,9 +505,47 @@
 
         <div id="sellerStatus" class="text-sm font-medium text-emerald-800 mt-4 min-h-[20px]"></div>
       </div>
+
+      <!-- Seller's Listed Products & Post Views -->
+      <div class="editorial-card rounded-3xl p-5 sm:p-8 max-w-3xl mx-auto mt-6 space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-slate-200">
+          <div>
+            <h3 class="text-lg sm:text-xl font-extrabold text-slate-900">Your Listed Products</h3>
+            <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
+              See your active posts and how many times buyers have opened each listing.
+            </p>
+          </div>
+          <span id="sellerListingsCount" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-800 border border-slate-200 self-start sm:self-auto">
+            0 listings
+          </span>
+        </div>
+        <div id="sellerListingsList" class="space-y-3"></div>
+      </div>
     </section>
 
-    <!-- Minimal Kunda Stays Inspired Footer -->
+    <!-- SAVED POSTS VIEW -->
+    <section id="tab-saved" style="display:none;" class="space-y-5">
+      <div class="editorial-card rounded-3xl p-5 sm:p-7 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-wider text-emerald-700">Your Favourites</p>
+          <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 mt-1">Saved Posts</h2>
+          <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
+            Items you bookmarked for quick WhatsApp or phone follow-up.
+          </p>
+        </div>
+        <span id="savedPostsCount" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200 self-start sm:self-auto">
+          0 saved
+        </span>
+      </div>
+      <div id="savedPostsList" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"></div>
+    </section>
+
+    <!-- PROFILE VIEW -->
+    <section id="tab-profile" style="display:none;" class="space-y-5">
+      <div id="profileCard" class="editorial-card rounded-3xl p-5 sm:p-8 max-w-2xl mx-auto"></div>
+    </section>
+
+    <!-- Minimal Footer -->
     <footer class="mt-14 pt-8 border-t border-slate-200/90 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
       <div class="flex items-center gap-2">
         <span class="font-bold text-slate-800">GamCart</span>
@@ -447,7 +553,7 @@
         <span>Built in The Gambia 🇬🇲</span>
       </div>
       <div class="flex items-center gap-4">
-        <span>99% Seller • 1% Platform</span>
+        <span>Local Marketplace</span>
         <span>•</span>
         <span>Direct Seller Contact</span>
       </div>
@@ -512,6 +618,42 @@
     </div>
   </div>
 
+  <!-- Fixed Bottom Tabs Bar (Explore, Saved Post, Profile) -->
+  <nav
+    aria-label="Bottom Workspace Tabs"
+    class="fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200/90 shadow-lg"
+  >
+    <div class="max-w-3xl mx-auto px-4 h-16 grid grid-cols-3 gap-2 items-center">
+      <button
+        type="button"
+        data-tab="shop"
+        class="bottom-tab-btn h-11 rounded-2xl text-xs sm:text-sm font-bold bg-slate-900 text-white flex items-center justify-center gap-2 transition cursor-pointer"
+      >
+        <span>🧭</span>
+        <span>Explore</span>
+      </button>
+
+      <button
+        type="button"
+        data-tab="saved"
+        class="bottom-tab-btn h-11 rounded-2xl text-xs sm:text-sm font-semibold text-slate-600 hover:bg-slate-100 flex items-center justify-center gap-2 transition cursor-pointer"
+      >
+        <span>🔖</span>
+        <span>Saved Post</span>
+        <span id="bottomSavedBadge" class="px-1.5 py-0.5 rounded-full text-[10px] font-extrabold bg-emerald-100 text-emerald-800">0</span>
+      </button>
+
+      <button
+        type="button"
+        data-tab="profile"
+        class="bottom-tab-btn h-11 rounded-2xl text-xs sm:text-sm font-semibold text-slate-600 hover:bg-slate-100 flex items-center justify-center gap-2 transition cursor-pointer"
+      >
+        <span>👤</span>
+        <span>Profile</span>
+      </button>
+    </div>
+  </nav>
+
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
     import {
@@ -527,6 +669,10 @@
       collection,
       addDoc,
       getDocs,
+      doc,
+      updateDoc,
+      deleteDoc,
+      increment,
       query,
       orderBy,
       serverTimestamp
@@ -552,65 +698,95 @@
     let selectedArea = "ALL";
     let selectedCategory = "ALL";
     let searchQuery = "";
+    let minPriceFilter = null;
+    let maxPriceFilter = null;
     let currentUserRole = "buyer";
     let activeDetailProductId = null;
+    let savedPostIds = [];
+    let pendingDeleteId = null;
+    let draftProductImages = [];
+    let editDraftImages = [];
 
-    function cleanPhoneNumber(rawPhone = "") {
-      const digits = String(rawPhone).replace(/\D/g, "");
-      if (!digits) return "2203000000";
-      if (digits.startsWith("220")) return digits;
-      return `220${digits}`;
-    }
+    const MAX_PRODUCT_IMAGES = 6;
+    const FALLBACK_IMAGE_URL = "https://placehold.co/600x400/e2e8f0/334155?text=GamCart+Item";
 
-    function getWhatsAppUrl(phone, shopName, productName, priceNum) {
-      const clean = cleanPhoneNumber(phone);
-      const message = encodeURIComponent(
-        `Salam ${shopName || "Seller"}! I saw "${productName}" (GMD ${priceNum.toLocaleString()}) on GamCart. Is it still available?`
-      );
-      return `https://wa.me/${clean}?text=${message}`;
-    }
-
-    function getCallUrl(phone) {
-      return `tel:+${cleanPhoneNumber(phone)}`;
-    }
-
-    const starterProducts = [
+    const STARTER_PRODUCTS = [
       {
-        name: "Street Anthem Tee",
-        category: "Fashion & Apparel",
-        price: 650,
-        shop: "QYLO",
-        area: "Jabang",
-        phone: "+220 712 3401",
-        description: "Heavyweight breathable cotton streetwear tee with crisp front print. Ideal for everyday wear in The Gambia.",
-        imageUrl: "https://placehold.co/600x400/ecfdf5/065f46?text=Street+Anthem+Tee"
-      },
-      {
-        name: "Fast Charger & Cable",
+        id: "starter-1",
+        name: "20W USB-C Fast iPhone Charger & Cable",
         category: "Tech & Gadgets",
-        price: 400,
-        shop: "Brusubi Gadgets",
-        area: "Brusubi",
-        phone: "+220 745 8820",
-        description: "Reliable fast-charging power adapter and reinforced cable built for daily phone charging.",
-        imageUrl: "https://placehold.co/600x400/f1f5f9/0f172a?text=Fast+Charger+%26+Cable"
+        price: 650,
+        shop: "Jabang Tech Hub",
+        area: "Jabang",
+        phone: "+2207102244",
+        views: 18,
+        description: "Brand new 20W PD adapter with braided USB-C to Lightning cable. Fast charging tested and ready for pickup or meetup in Jabang.",
+        images: [
+          "https://placehold.co/600x400/047857/ffffff?text=20W+Fast+Charger",
+          "https://placehold.co/600x400/065f46/ffffff?text=USB-C+Cable+Included"
+        ]
       },
       {
-        name: "Daily Essentials Bundle",
-        category: "Home & Essentials",
-        price: 850,
-        shop: "Serrekunda Mart",
+        id: "starter-2",
+        name: "QYLO Heavyweight Cotton Streetwear Tee",
+        category: "Fashion & Apparel",
+        price: 950,
+        shop: "QYLO Studio",
+        area: "Brusubi",
+        phone: "+2203849102",
+        views: 31,
+        description: "260gsm combed cotton relaxed fit tee in Forest Olive & Sand. Sizes M, L, XL available around Brusubi Turntable.",
+        images: [
+          "https://placehold.co/600x400/0f172a/ffffff?text=QYLO+Heavyweight+Tee",
+          "https://placehold.co/600x400/1e293b/ffffff?text=260gsm+Cotton+Fit"
+        ]
+      },
+      {
+        id: "starter-3",
+        name: "Pure Baobab & Shea Whipped Body Butter",
+        category: "Beauty & Care",
+        price: 380,
+        shop: "Kairaba Natural Care",
         area: "Serrekunda",
-        phone: "+220 398 1122",
-        description: "Practical household pack covering daily essentials so you stay stocked without extra trips.",
-        imageUrl: "https://placehold.co/600x400/fef3c7/92400e?text=Daily+Essentials+Bundle"
+        phone: "+2207621980",
+        views: 24,
+        description: "Locally whipped raw shea butter blended with cold-pressed Gambian baobab oil for deep hydration.",
+        images: [
+          "https://placehold.co/600x400/d97706/ffffff?text=Baobab+%26+Shea+Butter"
+        ]
+      },
+      {
+        id: "starter-4",
+        name: "Rechargeable Solar LED Lantern + Phone Bank",
+        category: "Home & Essentials",
+        price: 1150,
+        shop: "Salagi Solar & Home",
+        area: "Salagi",
+        phone: "+2202458891",
+        views: 14,
+        description: "Bright 360-degree LED lantern with built-in solar panel and USB output to top up your phone during outages.",
+        images: [
+          "https://placehold.co/600x400/0369a1/ffffff?text=Solar+LED+Lantern"
+        ]
+      },
+      {
+        id: "starter-5",
+        name: "100% Raw Gambian Wildflower Honey (750ml)",
+        category: "Local Goods",
+        price: 550,
+        shop: "Banjul Harvest Collective",
+        area: "Greater Banjul Area",
+        phone: "+2209914307",
+        views: 27,
+        description: "Unfiltered golden honey harvested cleanly in West Coast Region and bottled fresh in Greater Banjul.",
+        images: [
+          "https://placehold.co/600x400/b45309/ffffff?text=Gambian+Wildflower+Honey"
+        ]
       }
     ];
 
-    let uploadedPhotoDataUrl = "";
-
-    function escapeHtml(value) {
-      return String(value ?? "")
+    function escapeHtml(str) {
+      return String(str ?? "")
         .replace(/&/g, "&amp;")
         .replace(/</g, "&lt;")
         .replace(/>/g, "&gt;")
@@ -618,201 +794,1158 @@
         .replace(/'/g, "&#39;");
     }
 
-    function getCategoryBadgeIcon(category = "") {
-      const lower = category.toLowerCase();
-      if (lower.includes("fashion") || lower.includes("apparel")) return "👕";
-      if (lower.includes("tech") || lower.includes("gadget")) return "⚡";
-      if (lower.includes("beauty") || lower.includes("care")) return "✨";
-      if (lower.includes("local")) return "🌿";
-      return "🛍️";
+    function getProductImages(product) {
+      if (Array.isArray(product.images) && product.images.length > 0) {
+        return product.images.filter(Boolean);
+      }
+      if (product.imageUrl) {
+        return [product.imageUrl];
+      }
+      return [FALLBACK_IMAGE_URL];
     }
 
-    function setActiveTab(target) {
-      const validTab = target === "seller" ? "seller" : "shop";
-      document.querySelectorAll(".nav-pill[data-tab]").forEach((btn) => {
-        const isCurrent = btn.dataset.tab === validTab;
-        const isMobile = Boolean(btn.closest(".md\\:hidden"));
-        if (isMobile) {
-          btn.className = isCurrent
-            ? "nav-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-900 text-white whitespace-nowrap cursor-pointer"
-            : "nav-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 whitespace-nowrap cursor-pointer";
-        } else {
-          btn.className = isCurrent
-            ? "nav-pill px-4 py-1.5 rounded-full text-xs font-semibold bg-slate-900 text-white transition cursor-pointer"
-            : "nav-pill px-4 py-1.5 rounded-full text-xs font-semibold text-slate-600 hover:text-slate-900 transition cursor-pointer";
+    function isOwnListing(product) {
+      if (!currentUser || !product) return false;
+      if (product.sellerUid && currentUser.uid && product.sellerUid === currentUser.uid) {
+        return true;
+      }
+      if (
+        product.sellerEmail &&
+        currentUser.email &&
+        product.sellerEmail.toLowerCase() === currentUser.email.toLowerCase()
+      ) {
+        return true;
+      }
+      return false;
+    }
+
+    function normalizeDigits(phone) {
+      const digits = String(phone || "").replace(/\D/g, "");
+      if (!digits) return "2200000000";
+      if (digits.startsWith("220")) return digits;
+      return "220" + digits;
+    }
+
+    function getWhatsAppUrl(phone, shop, itemName, price) {
+      const cleanPhone = normalizeDigits(phone);
+      const text = encodeURIComponent(
+        `Salam ${shop || "Seller"}! I saw "${itemName}" on GamCart for GMD ${Number(price || 0).toLocaleString()}. Is it still available?`
+      );
+      return `https://wa.me/${cleanPhone}?text=${text}`;
+    }
+
+    function getCallUrl(phone) {
+      return `tel:+${normalizeDigits(phone)}`;
+    }
+
+    function getSavedStorageKey() {
+      return currentUser ? `gamcart_saved_${currentUser.uid}` : null;
+    }
+
+    function loadSavedPostsForUser() {
+      const key = getSavedStorageKey();
+      if (!key) {
+        savedPostIds = [];
+        updateSavedBadge();
+        return;
+      }
+      try {
+        const raw = localStorage.getItem(key);
+        const parsed = raw ? JSON.parse(raw) : [];
+        savedPostIds = Array.isArray(parsed) ? parsed : [];
+      } catch (e) {
+        savedPostIds = [];
+      }
+      updateSavedBadge();
+    }
+
+    function persistSavedPostsForUser() {
+      const key = getSavedStorageKey();
+      if (!key) return;
+      try {
+        localStorage.setItem(key, JSON.stringify(savedPostIds));
+      } catch (e) {
+        // Ignore storage errors
+      }
+      updateSavedBadge();
+    }
+
+    function updateSavedBadge() {
+      const validSaved = savedPostIds.filter((id) => {
+        const item = products.find((p) => p.id === id);
+        return item && !isOwnListing(item);
+      });
+      const count = currentUser ? validSaved.length : 0;
+      const bottomBadge = document.getElementById("bottomSavedBadge");
+      const countLabel = document.getElementById("savedPostsCount");
+      if (bottomBadge) bottomBadge.textContent = String(count);
+      if (countLabel) countLabel.textContent = `${count} saved`;
+    }
+
+    function isSavedProduct(productId) {
+      return Boolean(currentUser && savedPostIds.includes(productId));
+    }
+
+    function toggleSavePost(productId, event) {
+      if (event) event.stopPropagation();
+      if (!currentUser) {
+        openAuthModal();
+        const authStatus = document.getElementById("authStatus");
+        if (authStatus) {
+          authStatus.textContent = "Please log in or sign up to save favourite posts.";
+        }
+        return;
+      }
+      const target = products.find((p) => p.id === productId);
+      if (!target || isOwnListing(target)) return;
+
+      if (savedPostIds.includes(productId)) {
+        savedPostIds = savedPostIds.filter((id) => id !== productId);
+      } else {
+        savedPostIds.push(productId);
+      }
+      persistSavedPostsForUser();
+      renderProducts();
+      renderSavedPostsView();
+      renderProfileView();
+      if (activeDetailProductId === productId) {
+        openProductDetailModal(productId, true);
+      }
+    }
+
+    function setActiveTab(tabName) {
+      const sections = ["shop", "seller", "saved", "profile"];
+      sections.forEach((sec) => {
+        const el = document.getElementById(`tab-${sec}`);
+        if (el) {
+          el.style.display = sec === tabName ? "" : "none";
         }
       });
 
-      ["shop", "seller"].forEach((tabName) => {
-        document.getElementById(`tab-${tabName}`).style.display = tabName === validTab ? "block" : "none";
+      document.querySelectorAll(".bottom-tab-btn").forEach((btn) => {
+        const active = btn.dataset.tab === tabName;
+        if (active) {
+          btn.classList.remove("text-slate-600", "hover:bg-slate-100", "font-semibold");
+          btn.classList.add("bg-slate-900", "text-white", "font-bold");
+        } else {
+          btn.classList.remove("bg-slate-900", "text-white", "font-bold");
+          btn.classList.add("text-slate-600", "hover:bg-slate-100", "font-semibold");
+        }
       });
+
+      if (tabName === "seller") renderSellerListings();
+      if (tabName === "saved") renderSavedPostsView();
+      if (tabName === "profile") renderProfileView();
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
-    document.querySelectorAll(".nav-pill[data-tab]").forEach((btn) => {
-      btn.addEventListener("click", () => setActiveTab(btn.dataset.tab));
-    });
-
-    document.getElementById("brandHomeBtn").addEventListener("click", () => setActiveTab("shop"));
-
-    // Search, Area & Category Filter Listeners
-    document.getElementById("searchInput").addEventListener("input", (e) => {
-      searchQuery = e.target.value.trim().toLowerCase();
-      renderProducts();
-    });
-
-    document.querySelectorAll(".area-pill").forEach((pill) => {
-      pill.addEventListener("click", () => {
-        selectedArea = pill.dataset.area;
-        document.querySelectorAll(".area-pill").forEach((p) => {
-          const active = p.dataset.area === selectedArea;
-          p.className = active
-            ? "area-pill px-3.5 py-2 rounded-full text-xs font-semibold bg-slate-900 text-white whitespace-nowrap transition cursor-pointer"
-            : "area-pill px-3.5 py-2 rounded-full text-xs font-medium bg-slate-100 text-slate-700 hover:bg-slate-200 whitespace-nowrap transition cursor-pointer";
-        });
-        renderProducts();
-      });
-    });
-
-    document.querySelectorAll(".cat-pill").forEach((pill) => {
-      pill.addEventListener("click", () => {
-        selectedCategory = pill.dataset.category;
-        document.querySelectorAll(".cat-pill").forEach((p) => {
-          const active = p.dataset.category === selectedCategory;
-          p.className = active
-            ? "cat-pill px-4 py-2 rounded-full text-xs font-semibold bg-emerald-700 text-white whitespace-nowrap transition cursor-pointer"
-            : "cat-pill px-4 py-2 rounded-full text-xs font-medium bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 whitespace-nowrap transition cursor-pointer";
-        });
-        renderProducts();
-      });
-    });
-
-    // Auth Modal Controls
     const authModal = document.getElementById("authModal");
-    const openAuthBtn = document.getElementById("openAuthBtn");
-    const closeAuthBtn = document.getElementById("closeAuthBtn");
-    const logoutBtn = document.getElementById("logoutBtn");
-
-    const openAuthModal = () => {
+    function openAuthModal() {
       if (!authModal) return;
       authModal.classList.remove("hidden");
       authModal.classList.add("flex");
-    };
-    const closeAuthModal = () => {
+    }
+
+    function closeAuthModal() {
       if (!authModal) return;
       authModal.classList.add("hidden");
       authModal.classList.remove("flex");
-      const statusEl = document.getElementById("authStatus");
-      if (statusEl) statusEl.textContent = "";
-    };
-
-    if (openAuthBtn) openAuthBtn.addEventListener("click", openAuthModal);
-    if (closeAuthBtn) closeAuthBtn.addEventListener("click", closeAuthModal);
-    if (authModal) {
-      authModal.addEventListener("click", (e) => {
-        if (e.target === authModal) closeAuthModal();
-      });
     }
-    if (logoutBtn) {
-      logoutBtn.addEventListener("click", async () => {
+
+    const productDetailModal = document.getElementById("productDetailModal");
+    const productDetailContent = document.getElementById("productDetailContent");
+
+    function closeProductDetailModal() {
+      activeDetailProductId = null;
+      if (!productDetailModal) return;
+      productDetailModal.classList.add("hidden");
+      productDetailModal.classList.remove("flex");
+    }
+
+    async function incrementProductViews(product) {
+      if (!product || isOwnListing(product)) return;
+      product.views = (Number(product.views) || 0) + 1;
+      if (!String(product.id).startsWith("starter-")) {
         try {
-          await signOut(auth);
+          await updateDoc(doc(db, "products", product.id), {
+            views: increment(1)
+          });
         } catch (err) {
-          console.error("Sign out error:", err);
+          // Non-blocking if security rules restrict public view increments
         }
-      });
-    }
-
-    const authForm = document.getElementById("authForm");
-    const toggleAuthModeBtn = document.getElementById("toggleAuthMode");
-    const authRoleWrapper = document.getElementById("authRoleWrapper");
-    const authTitle = document.getElementById("authTitle");
-    const authSubmitBtn = document.getElementById("authSubmitBtn");
-
-    if (toggleAuthModeBtn) {
-      toggleAuthModeBtn.addEventListener("click", () => {
-        isSignUp = !isSignUp;
-        if (authRoleWrapper) authRoleWrapper.style.display = isSignUp ? "block" : "none";
-        if (authTitle) authTitle.textContent = isSignUp ? "Create a GamCart Account" : "Log In to GamCart";
-        if (authSubmitBtn) authSubmitBtn.textContent = isSignUp ? "Sign Up" : "Log In";
-        toggleAuthModeBtn.textContent = isSignUp
-          ? "Already have an account? Log In"
-          : "Need an account? Sign Up";
-        const statusEl = document.getElementById("authStatus");
-        if (statusEl) statusEl.textContent = "";
-      });
-    }
-
-    if (authForm) {
-      authForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const statusEl = document.getElementById("authStatus");
-        const email = document.getElementById("authEmail").value.trim();
-        const password = document.getElementById("authPassword").value;
-        const selectedRole = document.getElementById("authRole")?.value || "buyer";
-
-        if (statusEl) statusEl.textContent = isSignUp ? "Creating your account..." : "Signing in...";
-
-        try {
-          if (isSignUp) {
-            const cred = await createUserWithEmailAndPassword(auth, email, password);
-            if (cred.user) {
-              await updateProfile(cred.user, { displayName: selectedRole });
-              currentUserRole = selectedRole;
-              const label = document.getElementById("userLabel");
-              if (label) label.textContent = `${cred.user.email} • ${selectedRole.toUpperCase()}`;
-            }
-            if (statusEl) statusEl.textContent = "Account created! Welcome to GamCart.";
-          } else {
-            await signInWithEmailAndPassword(auth, email, password);
-            if (statusEl) statusEl.textContent = "Signed in successfully.";
-          }
-          setTimeout(() => closeAuthModal(), 450);
-        } catch (err) {
-          if (statusEl) statusEl.textContent = err.message || "Authentication failed.";
-        }
-      });
-    }
-
-    onAuthStateChanged(auth, (user) => {
-      currentUser = user;
-      currentUserRole = user && user.displayName ? String(user.displayName).toLowerCase() : "buyer";
-      const label = document.getElementById("userLabel");
-
-      if (user) {
-        const roleBadge = user.displayName ? user.displayName.toUpperCase() : "MEMBER";
-        if (label) {
-          label.textContent = `${user.email} • ${roleBadge}`;
-          label.classList.remove("hidden");
-          label.classList.add("lg:inline-flex");
-        }
-        if (openAuthBtn) openAuthBtn.style.display = "none";
-        if (logoutBtn) logoutBtn.style.display = "inline-flex";
-      } else {
-        if (label) label.textContent = "Guest";
-        if (openAuthBtn) openAuthBtn.style.display = "inline-flex";
-        if (logoutBtn) logoutBtn.style.display = "none";
       }
       renderProducts();
-    });
+      renderSellerListings();
+    }
 
-    const pImageFileInput = document.getElementById("pImageFile");
-    const pImageUrlInput = document.getElementById("pImage");
-    const pImagePreviewBox = document.getElementById("pImagePreviewBox");
-    const pImagePreview = document.getElementById("pImagePreview");
-    const clearPhotoBtn = document.getElementById("clearPhotoBtn");
+    function openProductDetailModal(productId, skipViewIncrement = false) {
+      const product = products.find((p) => p.id === productId);
+      if (!product || !productDetailModal || !productDetailContent) return;
+
+      activeDetailProductId = productId;
+      if (!skipViewIncrement) {
+        incrementProductViews(product);
+      }
+
+      const images = getProductImages(product);
+      let currentImgIdx = 0;
+      const ownPost = isOwnListing(product);
+      const saved = isSavedProduct(product.id);
+      const priceNum = Number(product.price) || 0;
+      const viewsNum = Number(product.views) || 0;
+      const waUrl = getWhatsAppUrl(product.phone, product.shop, product.name, priceNum);
+      const telUrl = getCallUrl(product.phone);
+
+      const renderDetailBody = () => {
+        productDetailContent.innerHTML = `
+          <div class="relative bg-slate-100 h-64 sm:h-80 overflow-hidden">
+            <img
+              src="${escapeHtml(images[currentImgIdx])}"
+              alt="${escapeHtml(product.name)}"
+              onerror="this.onerror=null;this.src='${FALLBACK_IMAGE_URL}';"
+              class="w-full h-full object-cover"
+            />
+            <button
+              type="button"
+              id="closeDetailModalBtn"
+              aria-label="Close product preview"
+              class="absolute top-3.5 right-3.5 w-9 h-9 rounded-full bg-slate-900/80 hover:bg-slate-900 text-white flex items-center justify-center text-sm font-bold cursor-pointer"
+            >
+              ✕
+            </button>
+            ${
+              images.length > 1
+                ? `
+                  <button
+                    type="button"
+                    id="prevDetailImgBtn"
+                    aria-label="Previous photo"
+                    class="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/90 hover:bg-white text-slate-900 font-bold shadow cursor-pointer"
+                  >
+                    ‹
+                  </button>
+                  <button
+                    type="button"
+                    id="nextDetailImgBtn"
+                    aria-label="Next photo"
+                    class="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/90 hover:bg-white text-slate-900 font-bold shadow cursor-pointer"
+                  >
+                    ›
+                  </button>
+                  <span class="absolute bottom-3 left-3 px-2.5 py-1 rounded-full text-[11px] font-bold bg-slate-900/80 text-white">
+                    Photo ${currentImgIdx + 1} of ${images.length}
+                  </span>
+                `
+                : ""
+            }
+          </div>
+
+          ${
+            images.length > 1
+              ? `
+                <div class="flex items-center gap-2 px-5 pt-3 overflow-x-auto no-scrollbar">
+                  ${images
+                    .map(
+                      (src, idx) => `
+                        <button
+                          type="button"
+                          data-detail-thumb="${idx}"
+                          class="detail-thumb-btn w-14 h-14 rounded-xl overflow-hidden border-2 shrink-0 cursor-pointer ${
+                            idx === currentImgIdx ? "border-emerald-700" : "border-transparent opacity-70 hover:opacity-100"
+                          }"
+                        >
+                          <img src="${escapeHtml(src)}" alt="Thumb ${idx + 1}" class="w-full h-full object-cover" />
+                        </button>
+                      `
+                    )
+                    .join("")}
+                </div>
+              `
+              : ""
+          }
+
+          <div class="p-5 sm:p-6 space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">
+                  ${escapeHtml(product.category || "General")}
+                </span>
+                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700">
+                  📍 ${escapeHtml(product.area || "The Gambia")}
+                </span>
+                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-600">
+                  👁️ ${viewsNum} ${viewsNum === 1 ? "view" : "views"}
+                </span>
+              </div>
+              <span class="text-xl sm:text-2xl font-extrabold text-emerald-700">
+                GMD ${priceNum.toLocaleString()}
+              </span>
+            </div>
+
+            <div>
+              <h3 class="text-lg sm:text-xl font-extrabold text-slate-900">${escapeHtml(product.name)}</h3>
+              <p class="text-xs font-semibold text-slate-500 mt-1">
+                Listed by <span class="text-slate-800">${escapeHtml(product.shop || "Local Seller")}</span>
+              </p>
+            </div>
+
+            <p class="text-sm text-slate-600 leading-relaxed">
+              ${escapeHtml(product.description || "Contact seller directly for details and availability.")}
+            </p>
+
+            ${
+              ownPost
+                ? `
+                  <div class="bg-emerald-50 border border-emerald-200 rounded-2xl p-4 space-y-3">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                      <div>
+                        <p class="text-xs font-extrabold text-emerald-900">Your Own Listing</p>
+                        <p class="text-xs text-emerald-800 mt-0.5">
+                          WhatsApp, Call, and Save are disabled on your own post. Edit or delete it directly below.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-2">
+                      <button
+                        type="button"
+                        id="detailEditOwnBtn"
+                        class="px-4 py-2 rounded-full text-xs font-bold bg-slate-900 hover:bg-slate-800 text-white cursor-pointer"
+                      >
+                        Edit Post
+                      </button>
+                      ${
+                        pendingDeleteId === product.id
+                          ? `
+                            <button
+                              type="button"
+                              id="detailConfirmDelOwnBtn"
+                              class="px-4 py-2 rounded-full text-xs font-bold bg-rose-600 hover:bg-rose-700 text-white cursor-pointer"
+                            >
+                              Confirm Delete
+                            </button>
+                            <button
+                              type="button"
+                              id="detailCancelDelOwnBtn"
+                              class="px-4 py-2 rounded-full text-xs font-semibold bg-slate-200 hover:bg-slate-300 text-slate-800 cursor-pointer"
+                            >
+                              Cancel
+                            </button>
+                          `
+                          : `
+                            <button
+                              type="button"
+                              id="detailAskDelOwnBtn"
+                              class="px-4 py-2 rounded-full text-xs font-bold bg-rose-50 border border-rose-200 hover:bg-rose-100 text-rose-700 cursor-pointer"
+                            >
+                              Delete Post
+                            </button>
+                          `
+                      }
+                    </div>
+                  </div>
+                `
+                : `
+                  <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-2">
+                    <a
+                      href="${waUrl}"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="py-3 px-4 rounded-full text-xs font-bold bg-emerald-700 hover:bg-emerald-800 text-white text-center transition"
+                    >
+                      💬 WhatsApp Seller
+                    </a>
+                    <a
+                      href="${telUrl}"
+                      class="py-3 px-4 rounded-full text-xs font-bold bg-slate-900 hover:bg-slate-800 text-white text-center transition"
+                    >
+                      📞 Call Seller
+                    </a>
+                    <button
+                      type="button"
+                      id="detailSaveToggleBtn"
+                      class="py-3 px-4 rounded-full text-xs font-bold border transition cursor-pointer ${
+                        saved
+                          ? "bg-emerald-50 border-emerald-300 text-emerald-800"
+                          : "bg-white border-slate-300 hover:bg-slate-50 text-slate-800"
+                      }"
+                    >
+                      ${saved ? "🔖 Saved Post" : "🔖 Save Post"}
+                    </button>
+                  </div>
+                `
+            }
+          </div>
+        `;
+
+        document.getElementById("closeDetailModalBtn")?.addEventListener("click", closeProductDetailModal);
+        document.getElementById("prevDetailImgBtn")?.addEventListener("click", () => {
+          currentImgIdx = (currentImgIdx - 1 + images.length) % images.length;
+          renderDetailBody();
+        });
+        document.getElementById("nextDetailImgBtn")?.addEventListener("click", () => {
+          currentImgIdx = (currentImgIdx + 1) % images.length;
+          renderDetailBody();
+        });
+        productDetailContent.querySelectorAll(".detail-thumb-btn").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            currentImgIdx = Number(btn.dataset.detailThumb);
+            renderDetailBody();
+          });
+        });
+        document.getElementById("detailSaveToggleBtn")?.addEventListener("click", (e) => {
+          toggleSavePost(product.id, e);
+        });
+        document.getElementById("detailEditOwnBtn")?.addEventListener("click", () => {
+          openEditProductModal(product.id);
+        });
+        document.getElementById("detailAskDelOwnBtn")?.addEventListener("click", () => {
+          pendingDeleteId = product.id;
+          renderDetailBody();
+        });
+        document.getElementById("detailCancelDelOwnBtn")?.addEventListener("click", () => {
+          pendingDeleteId = null;
+          renderDetailBody();
+        });
+        document.getElementById("detailConfirmDelOwnBtn")?.addEventListener("click", async () => {
+          await deleteSellerListing(product.id);
+          closeProductDetailModal();
+        });
+      };
+
+      productDetailModal.classList.remove("hidden");
+      productDetailModal.classList.add("flex");
+      renderDetailBody();
+    }
+
+    function renderProducts() {
+      const container = document.getElementById("productList");
+      if (!container) return;
+
+      const filtered = products.filter((p) => {
+        const matchesArea = selectedArea === "ALL" || p.area === selectedArea;
+        const matchesCategory = selectedCategory === "ALL" || p.category === selectedCategory;
+        const haystack = `${p.name || ""} ${p.shop || ""} ${p.area || ""} ${p.description || ""} ${p.category || ""}`.toLowerCase();
+        const matchesSearch = !searchQuery || haystack.includes(searchQuery);
+        const priceNum = Number(p.price) || 0;
+        const matchesMinPrice = minPriceFilter === null || priceNum >= minPriceFilter;
+        const matchesMaxPrice = maxPriceFilter === null || priceNum <= maxPriceFilter;
+        return matchesArea && matchesCategory && matchesSearch && matchesMinPrice && matchesMaxPrice;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full editorial-card rounded-3xl p-8 text-center space-y-2">
+            <p class="text-base font-bold text-slate-900">No listings match your current filter</p>
+            <p class="text-xs sm:text-sm text-slate-500">Try clearing your search or switching back to All Areas &amp; All Categories.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = filtered
+        .map((p) => {
+          const images = getProductImages(p);
+          const thumb = images[0];
+          const priceNum = Number(p.price) || 0;
+          const ownPost = isOwnListing(p);
+          const saved = isSavedProduct(p.id);
+          const waUrl = getWhatsAppUrl(p.phone, p.shop, p.name, priceNum);
+          const telUrl = getCallUrl(p.phone);
+
+          return `
+            <article
+              data-product-id="${escapeHtml(p.id)}"
+              class="listing-card editorial-card rounded-2xl overflow-hidden flex flex-col justify-between cursor-pointer"
+            >
+              <div>
+                <div class="relative bg-slate-100 h-48 overflow-hidden">
+                  <img
+                    src="${escapeHtml(thumb)}"
+                    alt="${escapeHtml(p.name)}"
+                    onerror="this.onerror=null;this.src='${FALLBACK_IMAGE_URL}';"
+                    class="w-full h-full object-cover"
+                  />
+                  <span class="absolute top-2.5 left-2.5 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-white/95 text-slate-800 shadow-2xs">
+                    ${escapeHtml(p.category || "Item")}
+                  </span>
+                  ${
+                    images.length > 1
+                      ? `<span class="absolute bottom-2.5 left-2.5 px-2 py-0.5 rounded-full text-[10px] font-bold bg-slate-900/80 text-white">📷 ${images.length}</span>`
+                      : ""
+                  }
+                  <span class="absolute bottom-2.5 right-2.5 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-slate-900/80 text-white">
+                    ${escapeHtml(p.area || "The Gambia")}
+                  </span>
+                  ${
+                    ownPost
+                      ? `<span class="absolute top-2.5 right-2.5 px-2.5 py-1 rounded-full text-[11px] font-bold bg-emerald-700 text-white">Your Post</span>`
+                      : `<button
+                          type="button"
+                          data-save-id="${escapeHtml(p.id)}"
+                          class="card-save-btn absolute top-2.5 right-2.5 px-2.5 py-1 rounded-full text-[11px] font-bold transition cursor-pointer ${
+                            saved
+                              ? "bg-emerald-700 text-white"
+                              : "bg-white/95 hover:bg-white text-slate-800 shadow-2xs"
+                          }"
+                        >
+                          ${saved ? "Saved" : "Save"}
+                        </button>`
+                  }
+                </div>
+
+                <div class="p-4 space-y-1.5">
+                  <div class="flex items-start justify-between gap-2">
+                    <h3 class="text-sm font-bold text-slate-900 line-clamp-1">${escapeHtml(p.name)}</h3>
+                    <span class="text-sm font-extrabold text-emerald-700 shrink-0">GMD ${priceNum.toLocaleString()}</span>
+                  </div>
+                  <p class="text-xs text-slate-600 line-clamp-2">${escapeHtml(p.description || "")}</p>
+                  <p class="text-[11px] font-semibold text-slate-700 pt-1">${escapeHtml(p.shop || "Local Seller")}</p>
+                </div>
+              </div>
+
+              <div class="px-4 pb-4 pt-2 border-t border-slate-100" onclick="event.stopPropagation()">
+                ${
+                  ownPost
+                    ? pendingDeleteId === p.id
+                      ? `
+                        <div class="grid grid-cols-2 gap-2">
+                          <button
+                            type="button"
+                            data-card-confirm-del="${escapeHtml(p.id)}"
+                            class="card-confirm-del-btn py-2 px-3 rounded-full text-xs font-bold bg-rose-600 hover:bg-rose-700 text-white text-center transition cursor-pointer"
+                          >
+                            Confirm Delete
+                          </button>
+                          <button
+                            type="button"
+                            class="card-cancel-del-btn py-2 px-3 rounded-full text-xs font-semibold bg-slate-200 hover:bg-slate-300 text-slate-800 text-center transition cursor-pointer"
+                          >
+                            Cancel
+                          </button>
+                        </div>
+                      `
+                      : `
+                        <div class="grid grid-cols-2 gap-2">
+                          <button
+                            type="button"
+                            data-card-edit-id="${escapeHtml(p.id)}"
+                            class="card-edit-own-btn py-2 px-3 rounded-full text-xs font-bold bg-slate-900 hover:bg-slate-800 text-white text-center transition cursor-pointer"
+                          >
+                            Edit
+                          </button>
+                          <button
+                            type="button"
+                            data-card-ask-del="${escapeHtml(p.id)}"
+                            class="card-ask-del-btn py-2 px-3 rounded-full text-xs font-bold bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 text-center transition cursor-pointer"
+                          >
+                            Delete
+                          </button>
+                        </div>
+                      `
+                    : `
+                      <div class="grid grid-cols-2 gap-2">
+                        <a
+                          href="${waUrl}"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="py-2 px-3 rounded-full text-xs font-bold bg-emerald-700 hover:bg-emerald-800 text-white text-center transition"
+                        >
+                          WhatsApp
+                        </a>
+                        <a
+                          href="${telUrl}"
+                          class="py-2 px-3 rounded-full text-xs font-bold bg-slate-100 hover:bg-slate-200 text-slate-800 text-center transition"
+                        >
+                          Call
+                        </a>
+                      </div>
+                    `
+                }
+              </div>
+            </article>
+          `;
+        })
+        .join("");
+
+      container.querySelectorAll("article[data-product-id]").forEach((card) => {
+        card.addEventListener("click", () => {
+          openProductDetailModal(card.dataset.productId);
+        });
+      });
+
+      container.querySelectorAll(".card-save-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          toggleSavePost(btn.dataset.saveId, e);
+        });
+      });
+
+      container.querySelectorAll(".card-edit-own-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          openEditProductModal(btn.dataset.cardEditId);
+        });
+      });
+
+      container.querySelectorAll(".card-ask-del-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          pendingDeleteId = btn.dataset.cardAskDel;
+          renderProducts();
+        });
+      });
+
+      container.querySelectorAll(".card-cancel-del-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          pendingDeleteId = null;
+          renderProducts();
+        });
+      });
+
+      container.querySelectorAll(".card-confirm-del-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          deleteSellerListing(btn.dataset.cardConfirmDel);
+        });
+      });
+    }
+
+    async function deleteSellerListing(productId) {
+      const target = products.find((p) => p.id === productId);
+      if (!target || !isOwnListing(target)) return;
+      const statusEl = document.getElementById("sellerStatus");
+      if (statusEl) statusEl.textContent = "Deleting listing...";
+
+      try {
+        if (!String(productId).startsWith("starter-")) {
+          await deleteDoc(doc(db, "products", productId));
+        }
+        products = products.filter((p) => p.id !== productId);
+        pendingDeleteId = null;
+        if (statusEl) statusEl.textContent = `Deleted "${target.name}".`;
+        renderProducts();
+        renderSellerListings();
+        renderSavedPostsView();
+        renderProfileView();
+      } catch (err) {
+        if (statusEl) statusEl.textContent = `Delete error: ${err.message}`;
+      }
+    }
+
+    function openEditProductModal(productId) {
+      const item = products.find((p) => p.id === productId);
+      if (!item || !isOwnListing(item) || !productDetailModal || !productDetailContent) return;
+      editDraftImages = [...getProductImages(item)];
+
+      const renderEditModalBody = () => {
+        productDetailContent.innerHTML = `
+          <div class="p-5 sm:p-6 space-y-4">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-200">
+              <div>
+                <h3 class="text-lg font-extrabold text-slate-900">Edit Your Listing</h3>
+                <p class="text-xs text-slate-500">Update details, photos, or contact info</p>
+              </div>
+              <button
+                type="button"
+                id="closeEditModalBtn"
+                aria-label="Close edit modal"
+                class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center text-sm font-bold cursor-pointer"
+              >
+                ✕
+              </button>
+            </div>
+
+            <form id="editProductForm" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Product Name</label>
+                <input type="text" id="editPName" value="${escapeHtml(item.name || "")}" class="field-control" required />
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Category</label>
+                <select id="editPCategory" class="field-control">
+                  ${["Fashion & Apparel", "Tech & Gadgets", "Home & Essentials", "Beauty & Care", "Local Goods"]
+                    .map((cat) => `<option value="${cat}" ${item.category === cat ? "selected" : ""}>${cat}</option>`)
+                    .join("")}
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Item Price (GMD)</label>
+                <input type="number" id="editPPrice" value="${Number(item.price) || 0}" min="1" step="any" class="field-control" required />
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Shop Name</label>
+                <input type="text" id="editPShop" value="${escapeHtml(item.shop || "")}" class="field-control" required />
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Shop Area</label>
+                <select id="editPArea" class="field-control">
+                  ${["Jabang", "Brusubi", "Serrekunda", "Salagi", "Bakau", "Brikama", "Sukuta", "Fajara", "Kotu", "Kololi", "Latrikunda", "Greater Banjul Area"]
+                    .map((area) => `<option value="${area}" ${item.area === area ? "selected" : ""}>${area}</option>`)
+                    .join("")}
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Seller Phone / WhatsApp</label>
+                <input type="tel" id="editPPhone" value="${escapeHtml(item.phone || "")}" class="field-control" required />
+              </div>
+
+              <div class="sm:col-span-2">
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Description</label>
+                <textarea id="editPDescription" rows="3" class="field-control resize-y" required>${escapeHtml(item.description || "")}</textarea>
+              </div>
+
+              <div class="sm:col-span-2 bg-slate-50 border border-slate-200 rounded-2xl p-3.5 space-y-2.5">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-bold text-slate-800">Photos (${editDraftImages.length}/${MAX_PRODUCT_IMAGES})</span>
+                  <input type="file" id="editPImageFile" accept="image/*" multiple class="text-xs text-slate-600" />
+                </div>
+                <div class="flex flex-wrap gap-2">
+                  ${editDraftImages
+                    .map(
+                      (src, idx) => `
+                        <div class="relative w-14 h-14 rounded-xl overflow-hidden border border-slate-300 bg-white">
+                          <img src="${escapeHtml(src)}" alt="Photo ${idx + 1}" class="w-full h-full object-cover" />
+                          <button
+                            type="button"
+                            data-edit-remove-photo="${idx}"
+                            class="edit-remove-photo-btn absolute top-0.5 right-0.5 w-4 h-4 rounded-full bg-slate-900/80 hover:bg-rose-600 text-white text-[9px] font-bold flex items-center justify-center cursor-pointer"
+                          >
+                            ✕
+                          </button>
+                        </div>
+                      `
+                    )
+                    .join("")}
+                </div>
+              </div>
+
+              <div id="editModalStatus" class="sm:col-span-2 text-xs font-medium text-emerald-800 min-h-[16px]"></div>
+
+              <div class="sm:col-span-2 flex justify-end gap-2 pt-1">
+                <button
+                  type="button"
+                  id="cancelEditModalBtn"
+                  class="px-4 py-2 rounded-full text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 cursor-pointer"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  class="px-5 py-2 rounded-full text-xs font-bold bg-emerald-700 hover:bg-emerald-800 text-white cursor-pointer"
+                >
+                  Save Changes
+                </button>
+              </div>
+            </form>
+          </div>
+        `;
+
+        const closeFn = () => {
+          editDraftImages = [];
+          closeProductDetailModal();
+        };
+
+        document.getElementById("closeEditModalBtn")?.addEventListener("click", closeFn);
+        document.getElementById("cancelEditModalBtn")?.addEventListener("click", closeFn);
+
+        productDetailContent.querySelectorAll(".edit-remove-photo-btn").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const idx = Number(btn.dataset.editRemovePhoto);
+            editDraftImages.splice(idx, 1);
+            renderEditModalBody();
+          });
+        });
+
+        document.getElementById("editPImageFile")?.addEventListener("change", async (e) => {
+          const files = Array.from(e.target.files || []);
+          for (const file of files) {
+            if (editDraftImages.length >= MAX_PRODUCT_IMAGES) break;
+            const compressed = await compressImageFile(file);
+            editDraftImages.push(compressed);
+          }
+          renderEditModalBody();
+        });
+
+        document.getElementById("editProductForm")?.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const statusEl = document.getElementById("editModalStatus");
+          if (editDraftImages.length === 0) {
+            if (statusEl) statusEl.textContent = "Please keep at least 1 product photo.";
+            return;
+          }
+          if (statusEl) statusEl.textContent = "Saving changes...";
+
+          const updatedFields = {
+            name: document.getElementById("editPName").value.trim(),
+            category: document.getElementById("editPCategory").value,
+            price: Number(document.getElementById("editPPrice").value),
+            shop: document.getElementById("editPShop").value.trim(),
+            area: document.getElementById("editPArea").value,
+            phone: document.getElementById("editPPhone").value.trim(),
+            description: document.getElementById("editPDescription").value.trim(),
+            imageUrl: editDraftImages[0],
+            images: [...editDraftImages]
+          };
+
+          try {
+            if (!String(item.id).startsWith("starter-")) {
+              await updateDoc(doc(db, "products", item.id), updatedFields);
+            }
+            Object.assign(item, updatedFields);
+            renderProducts();
+            renderSellerListings();
+            renderSavedPostsView();
+            closeFn();
+            const sellerStatusEl = document.getElementById("sellerStatus");
+            if (sellerStatusEl) sellerStatusEl.textContent = `Updated "${item.name}".`;
+          } catch (err) {
+            if (statusEl) statusEl.textContent = `Update error: ${err.message}`;
+          }
+        });
+      };
+
+      productDetailModal.classList.remove("hidden");
+      productDetailModal.classList.add("flex");
+      renderEditModalBody();
+    }
+
+    function renderSellerListings() {
+      const container = document.getElementById("sellerListingsList");
+      const countBadge = document.getElementById("sellerListingsCount");
+      if (!container) return;
+
+      if (!currentUser) {
+        if (countBadge) countBadge.textContent = "Sign in required";
+        container.innerHTML = `
+          <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 text-center space-y-2.5">
+            <p class="text-sm font-bold text-slate-900">Sign in to view, edit, or delete your listings</p>
+            <p class="text-xs text-slate-600">Only logged-in sellers can manage their own posts and view post analytics.</p>
+            <button
+              type="button"
+              id="sellerPromptAuthBtn"
+              class="px-4 py-2 rounded-full text-xs font-bold bg-emerald-700 hover:bg-emerald-800 text-white transition cursor-pointer"
+            >
+              Log In / Sign Up
+            </button>
+          </div>
+        `;
+        document.getElementById("sellerPromptAuthBtn")?.addEventListener("click", openAuthModal);
+        return;
+      }
+
+      const myPosts = products.filter((p) => isOwnListing(p));
+      if (countBadge) {
+        countBadge.textContent = `${myPosts.length} ${myPosts.length === 1 ? "listing" : "listings"}`;
+      }
+
+      if (myPosts.length === 0) {
+        container.innerHTML = `
+          <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 text-center space-y-1">
+            <p class="text-sm font-bold text-slate-900">No active listings under ${escapeHtml(currentUser.email)}</p>
+            <p class="text-xs text-slate-500">Publish a product above to track views, edit details, or remove posts.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = myPosts
+        .map((p) => {
+          const priceNum = Number(p.price) || 0;
+          const viewsNum = Number(p.views) || 0;
+          const thumb = getProductImages(p)[0];
+          const isConfirmingDelete = pendingDeleteId === p.id;
+
+          return `
+            <div class="border border-slate-200 rounded-2xl p-3.5 bg-slate-50/70 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div class="flex items-center gap-3 min-w-0">
+                <img src="${escapeHtml(thumb)}" alt="${escapeHtml(p.name)}" class="w-16 h-16 rounded-xl object-cover border border-slate-200 shrink-0 bg-white" />
+                <div class="min-w-0">
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <h4 class="text-sm font-bold text-slate-900 truncate">${escapeHtml(p.name)}</h4>
+                    <span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-900">
+                      👁️ ${viewsNum} ${viewsNum === 1 ? "view" : "views"}
+                    </span>
+                  </div>
+                  <p class="text-xs text-slate-600 mt-0.5">
+                    GMD ${priceNum.toLocaleString()} • ${escapeHtml(p.area)}
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-2 flex-wrap shrink-0">
+                <button
+                  type="button"
+                  data-view-own="${escapeHtml(p.id)}"
+                  class="seller-view-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-white border border-slate-300 hover:bg-slate-100 text-slate-800 cursor-pointer"
+                >
+                  Open
+                </button>
+                <button
+                  type="button"
+                  data-edit-own="${escapeHtml(p.id)}"
+                  class="seller-edit-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900 hover:bg-slate-800 text-white cursor-pointer"
+                >
+                  Edit
+                </button>
+                ${
+                  isConfirmingDelete
+                    ? `
+                      <button
+                        type="button"
+                        data-confirm-del="${escapeHtml(p.id)}"
+                        class="seller-confirm-del-btn px-3 py-1.5 rounded-full text-xs font-bold bg-rose-600 hover:bg-rose-700 text-white cursor-pointer"
+                      >
+                        Confirm Delete
+                      </button>
+                      <button
+                        type="button"
+                        class="seller-cancel-del-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-200 hover:bg-slate-300 text-slate-800 cursor-pointer"
+                      >
+                        Cancel
+                      </button>
+                    `
+                    : `
+                      <button
+                        type="button"
+                        data-ask-del="${escapeHtml(p.id)}"
+                        class="seller-ask-del-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-rose-50 border border-rose-200 hover:bg-rose-100 text-rose-700 cursor-pointer"
+                      >
+                        Delete
+                      </button>
+                    `
+                }
+              </div>
+            </div>
+          `;
+        })
+        .join("");
+
+      container.querySelectorAll(".seller-view-btn").forEach((btn) => {
+        btn.addEventListener("click", () => openProductDetailModal(btn.dataset.viewOwn));
+      });
+      container.querySelectorAll(".seller-edit-btn").forEach((btn) => {
+        btn.addEventListener("click", () => openEditProductModal(btn.dataset.editOwn));
+      });
+      container.querySelectorAll(".seller-ask-del-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          pendingDeleteId = btn.dataset.askDel;
+          renderSellerListings();
+        });
+      });
+      container.querySelectorAll(".seller-cancel-del-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          pendingDeleteId = null;
+          renderSellerListings();
+        });
+      });
+      container.querySelectorAll(".seller-confirm-del-btn").forEach((btn) => {
+        btn.addEventListener("click", () => deleteSellerListing(btn.dataset.confirmDel));
+      });
+    }
+
+    function renderSavedPostsView() {
+      const container = document.getElementById("savedPostsList");
+      if (!container) return;
+      updateSavedBadge();
+
+      if (!currentUser) {
+        container.innerHTML = `
+          <div class="col-span-full editorial-card rounded-3xl p-8 text-center space-y-3">
+            <p class="text-base font-bold text-slate-900">Sign in to view your saved posts</p>
+            <p class="text-xs sm:text-sm text-slate-500">Log in or create an account to bookmark items you like.</p>
+            <button
+              type="button"
+              id="savedLoginPromptBtn"
+              class="px-5 py-2.5 rounded-full text-xs font-bold bg-emerald-700 hover:bg-emerald-800 text-white cursor-pointer"
+            >
+              Log In / Sign Up
+            </button>
+          </div>
+        `;
+        document.getElementById("savedLoginPromptBtn")?.addEventListener("click", openAuthModal);
+        return;
+      }
+
+      const savedItems = products.filter((p) => savedPostIds.includes(p.id) && !isOwnListing(p));
+      if (savedItems.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full editorial-card rounded-3xl p-8 text-center space-y-2">
+            <p class="text-base font-bold text-slate-900">No saved posts yet</p>
+            <p class="text-xs sm:text-sm text-slate-500">Tap Save on any listing in Explore to keep it handy here.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = savedItems
+        .map((p) => {
+          const priceNum = Number(p.price) || 0;
+          const thumb = getProductImages(p)[0];
+          const waUrl = getWhatsAppUrl(p.phone, p.shop, p.name, priceNum);
+          const telUrl = getCallUrl(p.phone);
+
+          return `
+            <article data-saved-card="${escapeHtml(p.id)}" class="listing-card editorial-card rounded-2xl overflow-hidden flex flex-col justify-between cursor-pointer">
+              <div>
+                <div class="relative bg-slate-100 h-44 overflow-hidden">
+                  <img src="${escapeHtml(thumb)}" alt="${escapeHtml(p.name)}" class="w-full h-full object-cover" />
+                  <button
+                    type="button"
+                    data-unsave-id="${escapeHtml(p.id)}"
+                    class="saved-remove-btn absolute top-2.5 right-2.5 px-2.5 py-1 rounded-full text-[11px] font-bold bg-emerald-700 text-white cursor-pointer"
+                  >
+                    Saved
+                  </button>
+                  <span class="absolute bottom-2.5 right-2.5 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-slate-900/80 text-white">
+                    ${escapeHtml(p.area)}
+                  </span>
+                </div>
+                <div class="p-4 space-y-1.5">
+                  <div class="flex items-start justify-between gap-2">
+                    <h3 class="text-sm font-bold text-slate-900 line-clamp-1">${escapeHtml(p.name)}</h3>
+                    <span class="text-sm font-extrabold text-emerald-700 shrink-0">GMD ${priceNum.toLocaleString()}</span>
+                  </div>
+                  <p class="text-xs text-slate-600 line-clamp-2">${escapeHtml(p.description || "")}</p>
+                  <p class="text-[11px] font-semibold text-slate-700 pt-1">${escapeHtml(p.shop)}</p>
+                </div>
+              </div>
+              <div class="px-4 pb-4 pt-2 border-t border-slate-100 grid grid-cols-2 gap-2" onclick="event.stopPropagation()">
+                <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="py-2 px-3 rounded-full text-xs font-bold bg-emerald-700 hover:bg-emerald-800 text-white text-center transition">WhatsApp</a>
+                <a href="${telUrl}" class="py-2 px-3 rounded-full text-xs font-bold bg-slate-100 hover:bg-slate-200 text-slate-800 text-center transition">Call</a>
+              </div>
+            </article>
+          `;
+        })
+        .join("");
+
+      container.querySelectorAll("article[data-saved-card]").forEach((card) => {
+        card.addEventListener("click", () => openProductDetailModal(card.dataset.savedCard));
+      });
+      container.querySelectorAll(".saved-remove-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => toggleSavePost(btn.dataset.unsaveId, e));
+      });
+    }
+
+    function renderProfileView() {
+      const card = document.getElementById("profileCard");
+      if (!card) return;
+
+      if (!currentUser) {
+        card.innerHTML = `
+          <div class="text-center space-y-3 py-4">
+            <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-800 font-extrabold text-xl flex items-center justify-center mx-auto border border-emerald-200">
+              👤
+            </div>
+            <h2 class="text-xl font-extrabold text-slate-900">Guest Account</h2>
+            <p class="text-xs sm:text-sm text-slate-600 max-w-md mx-auto">
+              Log in or sign up to save favourite listings, publish products, and manage your seller posts.
+            </p>
+            <button
+              type="button"
+              id="profileAuthBtn"
+              class="px-6 py-2.5 rounded-full text-sm font-bold bg-emerald-700 hover:bg-emerald-800 text-white transition cursor-pointer"
+            >
+              Log In / Sign Up
+            </button>
+          </div>
+        `;
+        document.getElementById("profileAuthBtn")?.addEventListener("click", openAuthModal);
+        return;
+      }
+
+      const myPosts = products.filter((p) => isOwnListing(p));
+      const totalViews = myPosts.reduce((sum, p) => sum + (Number(p.views) || 0), 0);
+
+      card.innerHTML = `
+        <div class="space-y-5">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-200">
+            <div>
+              <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
+                ${escapeHtml(currentUserRole.toUpperCase())} ACCOUNT
+              </span>
+              <h2 class="text-lg sm:text-xl font-extrabold text-slate-900 mt-1.5">${escapeHtml(currentUser.email)}</h2>
+            </div>
+            <button
+              type="button"
+              id="profileLogoutBtn"
+              class="px-4 py-2 rounded-full text-xs font-bold bg-slate-100 hover:bg-slate-200 text-slate-800 self-start sm:self-auto cursor-pointer"
+            >
+              Log Out
+            </button>
+          </div>
+
+          <div class="grid grid-cols-3 gap-3 text-center">
+            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-3">
+              <div class="text-lg font-extrabold text-slate-900">${myPosts.length}</div>
+              <div class="text-[11px] text-slate-500">Your Listings</div>
+            </div>
+            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-3">
+              <div class="text-lg font-extrabold text-emerald-700">${totalViews}</div>
+              <div class="text-[11px] text-slate-500">Total Views</div>
+            </div>
+            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-3">
+              <div class="text-lg font-extrabold text-slate-900">${savedPostIds.length}</div>
+              <div class="text-[11px] text-slate-500">Saved Posts</div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-2.5">
+            <button
+              type="button"
+              id="profileGoSellerBtn"
+              class="px-5 py-2.5 rounded-full text-xs font-bold bg-emerald-700 hover:bg-emerald-800 text-white cursor-pointer"
+            >
+              Open Seller Hub
+            </button>
+            <button
+              type="button"
+              id="profileGoSavedBtn"
+              class="px-5 py-2.5 rounded-full text-xs font-bold bg-slate-900 hover:bg-slate-800 text-white cursor-pointer"
+            >
+              View Saved Posts
+            </button>
+          </div>
+        </div>
+      `;
+
+      document.getElementById("profileLogoutBtn")?.addEventListener("click", async () => {
+        await signOut(auth);
+      });
+      document.getElementById("profileGoSellerBtn")?.addEventListener("click", () => setActiveTab("seller"));
+      document.getElementById("profileGoSavedBtn")?.addEventListener("click", () => setActiveTab("saved"));
+    }
+
+    async function loadProducts() {
+      try {
+        const q = query(collection(db, "products"), orderBy("createdAt", "desc"));
+        const snap = await getDocs(q);
+        const firestoreProducts = snap.docs.map((d) => ({
+          id: d.id,
+          ...d.data()
+        }));
+        products = [...firestoreProducts, ...STARTER_PRODUCTS];
+      } catch (err) {
+        products = [...STARTER_PRODUCTS];
+      }
+      updateSavedBadge();
+      renderProducts();
+      renderSellerListings();
+      renderSavedPostsView();
+      renderProfileView();
+    }
 
     function compressImageFile(file) {
-      return new Promise((resolve, reject) => {
-        if (!file || !file.type.startsWith("image/")) {
-          reject(new Error("Please choose a valid image file."));
-          return;
-        }
+      return new Promise((resolve) => {
         const reader = new FileReader();
-        reader.onload = () => {
+        reader.onload = (e) => {
           const img = new Image();
           img.onload = () => {
-            const maxDim = 800;
+            const maxDim = 900;
             let width = img.width;
             let height = img.height;
             if (width > height && width > maxDim) {
@@ -829,366 +1962,285 @@
             ctx.drawImage(img, 0, 0, width, height);
             resolve(canvas.toDataURL("image/jpeg", 0.78));
           };
-          img.onerror = () => reject(new Error("Could not load image preview."));
-          img.src = reader.result;
+          img.onerror = () => resolve(String(e.target.result || ""));
+          img.src = e.target.result;
         };
-        reader.onerror = () => reject(new Error("Failed to read file."));
+        reader.onerror = () => resolve("");
         reader.readAsDataURL(file);
       });
     }
 
-    function updatePhotoPreview() {
-      const urlVal = pImageUrlInput.value.trim();
-      const activeSrc = uploadedPhotoDataUrl || (/^https?:\/\//i.test(urlVal) ? urlVal : "");
-      if (activeSrc) {
-        pImagePreview.src = activeSrc;
-        pImagePreviewBox.classList.remove("hidden");
-        pImagePreviewBox.classList.add("flex");
-      } else {
-        pImagePreview.src = "";
-        pImagePreviewBox.classList.add("hidden");
-        pImagePreviewBox.classList.remove("flex");
+    function updateDraftPhotoGalleryUI() {
+      const previewWrap = document.getElementById("pImageGalleryPreview");
+      const countLabel = document.getElementById("pPhotoCountLabel");
+      const thumbsWrap = document.getElementById("pImageThumbs");
+      if (!previewWrap || !countLabel || !thumbsWrap) return;
+
+      if (draftProductImages.length === 0) {
+        previewWrap.classList.add("hidden");
+        thumbsWrap.innerHTML = "";
+        return;
       }
+
+      previewWrap.classList.remove("hidden");
+      countLabel.textContent = `${draftProductImages.length} of ${MAX_PRODUCT_IMAGES} photos attached`;
+      thumbsWrap.innerHTML = draftProductImages
+        .map(
+          (src, idx) => `
+            <div class="relative w-16 h-16 rounded-xl overflow-hidden border border-slate-300 bg-white">
+              <img src="${escapeHtml(src)}" alt="Preview ${idx + 1}" class="w-full h-full object-cover" />
+              <button
+                type="button"
+                data-remove-draft="${idx}"
+                class="remove-draft-photo-btn absolute top-0.5 right-0.5 w-4 h-4 rounded-full bg-slate-900/80 hover:bg-rose-600 text-white text-[9px] font-bold flex items-center justify-center cursor-pointer"
+              >
+                ✕
+              </button>
+            </div>
+          `
+        )
+        .join("");
+
+      thumbsWrap.querySelectorAll(".remove-draft-photo-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const idx = Number(btn.dataset.removeDraft);
+          draftProductImages.splice(idx, 1);
+          updateDraftPhotoGalleryUI();
+        });
+      });
     }
 
-    pImageFileInput.addEventListener("change", async (e) => {
-      const file = e.target.files && e.target.files[0];
-      if (!file) return;
+    // Event Listeners
+    document.getElementById("brandHomeBtn")?.addEventListener("click", () => setActiveTab("shop"));
+
+    document.querySelectorAll("[data-tab]").forEach((btn) => {
+      btn.addEventListener("click", () => setActiveTab(btn.dataset.tab));
+    });
+
+    document.getElementById("openAuthBtn")?.addEventListener("click", openAuthModal);
+    document.getElementById("closeAuthBtn")?.addEventListener("click", closeAuthModal);
+    authModal?.addEventListener("click", (e) => {
+      if (e.target === authModal) closeAuthModal();
+    });
+
+    productDetailModal?.addEventListener("click", (e) => {
+      if (e.target === productDetailModal) closeProductDetailModal();
+    });
+
+    document.getElementById("toggleAuthMode")?.addEventListener("click", () => {
+      isSignUp = !isSignUp;
+      const titleEl = document.getElementById("authTitle");
+      const submitBtn = document.getElementById("authSubmitBtn");
+      const toggleBtn = document.getElementById("toggleAuthMode");
+      const roleWrap = document.getElementById("authRoleWrapper");
+      const statusEl = document.getElementById("authStatus");
+
+      if (titleEl) titleEl.textContent = isSignUp ? "Create a GamCart Account" : "Log In to GamCart";
+      if (submitBtn) submitBtn.textContent = isSignUp ? "Sign Up" : "Log In";
+      if (toggleBtn) toggleBtn.textContent = isSignUp ? "Already have an account? Log In" : "Need an account? Sign Up";
+      if (roleWrap) roleWrap.style.display = isSignUp ? "" : "none";
+      if (statusEl) statusEl.textContent = "";
+    });
+
+    document.getElementById("authForm")?.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("authEmail").value.trim();
+      const password = document.getElementById("authPassword").value;
+      const role = document.getElementById("authRole").value || "buyer";
+      const statusEl = document.getElementById("authStatus");
+      if (statusEl) statusEl.textContent = isSignUp ? "Creating account..." : "Logging in...";
+
       try {
-        uploadedPhotoDataUrl = await compressImageFile(file);
-        pImageUrlInput.value = "";
-        updatePhotoPreview();
-        document.getElementById("sellerStatus").textContent = "Image compressed and ready.";
+        if (isSignUp) {
+          const cred = await createUserWithEmailAndPassword(auth, email, password);
+          await updateProfile(cred.user, { displayName: role });
+          currentUserRole = role;
+          if (statusEl) statusEl.textContent = `Welcome to GamCart, ${email}!`;
+        } else {
+          await signInWithEmailAndPassword(auth, email, password);
+          if (statusEl) statusEl.textContent = `Logged in as ${email}`;
+        }
+        setTimeout(() => {
+          closeAuthModal();
+        }, 400);
       } catch (err) {
-        uploadedPhotoDataUrl = "";
-        updatePhotoPreview();
-        document.getElementById("sellerStatus").textContent = `Image error: ${err.message}`;
+        if (statusEl) statusEl.textContent = err.message;
       }
     });
 
-    pImageUrlInput.addEventListener("input", () => {
-      if (pImageUrlInput.value.trim()) {
-        uploadedPhotoDataUrl = "";
-        pImageFileInput.value = "";
+    document.getElementById("logoutBtn")?.addEventListener("click", async () => {
+      await signOut(auth);
+    });
+
+    document.getElementById("searchInput")?.addEventListener("input", (e) => {
+      searchQuery = e.target.value.trim().toLowerCase();
+      renderProducts();
+    });
+
+    document.getElementById("minPriceInput")?.addEventListener("input", (e) => {
+      const raw = e.target.value.trim();
+      minPriceFilter = raw === "" ? null : Math.max(0, Number(raw));
+      renderProducts();
+    });
+
+    document.getElementById("maxPriceInput")?.addEventListener("input", (e) => {
+      const raw = e.target.value.trim();
+      maxPriceFilter = raw === "" ? null : Math.max(0, Number(raw));
+      renderProducts();
+    });
+
+    document.getElementById("clearPriceFilterBtn")?.addEventListener("click", () => {
+      minPriceFilter = null;
+      maxPriceFilter = null;
+      const minEl = document.getElementById("minPriceInput");
+      const maxEl = document.getElementById("maxPriceInput");
+      if (minEl) minEl.value = "";
+      if (maxEl) maxEl.value = "";
+      renderProducts();
+    });
+
+    document.querySelectorAll(".area-pill").forEach((pill) => {
+      pill.addEventListener("click", () => {
+        selectedArea = pill.dataset.area;
+        document.querySelectorAll(".area-pill").forEach((p) => {
+          const active = p.dataset.area === selectedArea;
+          if (active) {
+            p.classList.remove("bg-slate-100", "text-slate-700", "hover:bg-slate-200", "font-medium");
+            p.classList.add("bg-slate-900", "text-white", "font-semibold");
+          } else {
+            p.classList.remove("bg-slate-900", "text-white", "font-semibold");
+            p.classList.add("bg-slate-100", "text-slate-700", "hover:bg-slate-200", "font-medium");
+          }
+        });
+        renderProducts();
+      });
+    });
+
+    document.querySelectorAll(".cat-pill").forEach((pill) => {
+      pill.addEventListener("click", () => {
+        selectedCategory = pill.dataset.category;
+        document.querySelectorAll(".cat-pill").forEach((p) => {
+          const active = p.dataset.category === selectedCategory;
+          if (active) {
+            p.classList.remove("bg-white", "text-slate-700", "hover:bg-slate-100", "border", "border-slate-200", "font-medium");
+            p.classList.add("bg-emerald-700", "text-white", "font-semibold");
+          } else {
+            p.classList.remove("bg-emerald-700", "text-white", "font-semibold");
+            p.classList.add("bg-white", "text-slate-700", "hover:bg-slate-100", "border", "border-slate-200", "font-medium");
+          }
+        });
+        renderProducts();
+      });
+    });
+
+    document.getElementById("pPrice")?.addEventListener("input", (e) => {
+      // Price preview handled cleanly without payout split until Wave is integrated
+    });
+
+    document.getElementById("pImageFile")?.addEventListener("change", async (e) => {
+      const files = Array.from(e.target.files || []);
+      for (const file of files) {
+        if (draftProductImages.length >= MAX_PRODUCT_IMAGES) break;
+        const compressed = await compressImageFile(file);
+        if (compressed) draftProductImages.push(compressed);
       }
-      updatePhotoPreview();
+      e.target.value = "";
+      updateDraftPhotoGalleryUI();
     });
 
-    clearPhotoBtn.addEventListener("click", () => {
-      uploadedPhotoDataUrl = "";
-      pImageFileInput.value = "";
-      pImageUrlInput.value = "";
-      updatePhotoPreview();
+    document.getElementById("addImageUrlBtn")?.addEventListener("click", () => {
+      const input = document.getElementById("pImage");
+      const url = input ? input.value.trim() : "";
+      if (!url) return;
+      if (draftProductImages.length >= MAX_PRODUCT_IMAGES) return;
+      draftProductImages.push(url);
+      input.value = "";
+      updateDraftPhotoGalleryUI();
     });
 
-    // Seller Payout Preview
-    const pPriceInput = document.getElementById("pPrice");
-    const sellerPayoutPreview = document.getElementById("sellerPayoutPreview");
-    pPriceInput.addEventListener("input", () => {
-      const val = Number(pPriceInput.value);
-      if (val > 0) {
-        sellerPayoutPreview.innerHTML = `Seller keeps 99%: <strong class="text-emerald-800">GMD ${(val * 0.99).toFixed(2)}</strong> • GamCart 1%: <strong class="text-slate-900">GMD ${(val * 0.01).toFixed(2)}</strong>`;
-      } else {
-        sellerPayoutPreview.textContent = "Enter a price to preview 99% seller payout & 1% GamCart fee.";
-      }
+    document.getElementById("clearPhotoBtn")?.addEventListener("click", () => {
+      draftProductImages = [];
+      updateDraftPhotoGalleryUI();
     });
 
-    // Add Product to Firestore
-    document.getElementById("addProductForm").addEventListener("submit", async (e) => {
+    document.getElementById("addProductForm")?.addEventListener("submit", async (e) => {
       e.preventDefault();
       const statusEl = document.getElementById("sellerStatus");
-      const urlVal = pImageUrlInput.value.trim();
-      const finalImageUrl = uploadedPhotoDataUrl || urlVal;
-      const sellerPhone = document.getElementById("pPhone").value.trim();
-      const description = document.getElementById("pDescription").value.trim();
 
-      if (!finalImageUrl) {
-        statusEl.textContent = "Please upload a product photo or enter a valid image URL before publishing.";
-        return;
-      }
-      if (!sellerPhone) {
-        statusEl.textContent = "Please enter the seller's phone or WhatsApp number.";
-        return;
-      }
-      if (!description) {
-        statusEl.textContent = "Please enter a product description.";
+      if (!currentUser) {
+        openAuthModal();
+        const authStatus = document.getElementById("authStatus");
+        if (authStatus) {
+          authStatus.textContent = "Please log in or sign up before publishing a listing.";
+        }
         return;
       }
 
-      statusEl.textContent = "Publishing listing to Cloud Firestore...";
+      if (draftProductImages.length === 0) {
+        if (statusEl) statusEl.textContent = "Please attach at least 1 product photo before publishing.";
+        return;
+      }
 
-      const item = {
+      if (statusEl) statusEl.textContent = "Publishing listing...";
+
+      const newListing = {
         name: document.getElementById("pName").value.trim(),
         category: document.getElementById("pCategory").value,
         price: Number(document.getElementById("pPrice").value),
         shop: document.getElementById("pShop").value.trim(),
         area: document.getElementById("pArea").value,
-        phone: sellerPhone,
-        description,
-        imageUrl: finalImageUrl,
-        ownerEmail: currentUser ? currentUser.email : "guest",
+        phone: document.getElementById("pPhone").value.trim(),
+        description: document.getElementById("pDescription").value.trim(),
+        imageUrl: draftProductImages[0],
+        images: [...draftProductImages],
+        sellerUid: currentUser.uid,
+        sellerEmail: currentUser.email || "",
+        views: 0,
         createdAt: serverTimestamp()
       };
 
       try {
-        await addDoc(collection(db, "products"), item);
+        const docRef = await addDoc(collection(db, "products"), newListing);
+        products.unshift({
+          id: docRef.id,
+          ...newListing
+        });
         e.target.reset();
-        uploadedPhotoDataUrl = "";
-        updatePhotoPreview();
-        sellerPayoutPreview.textContent = "Enter a price to preview 99% seller payout & 1% GamCart fee.";
-        statusEl.textContent = "Published! Your listing is now live in Explore.";
-        await loadProducts();
+        draftProductImages = [];
+        updateDraftPhotoGalleryUI();
+        if (statusEl) statusEl.textContent = `Published "${newListing.name}" to GamCart!`;
+        renderProducts();
+        renderSellerListings();
+        renderProfileView();
       } catch (err) {
-        statusEl.textContent = `Publish error: ${err.message}`;
+        if (statusEl) statusEl.textContent = `Publish error: ${err.message}`;
       }
     });
 
-    const productDetailModal = document.getElementById("productDetailModal");
-    const productDetailContent = document.getElementById("productDetailContent");
+    onAuthStateChanged(auth, (user) => {
+      currentUser = user;
+      const userLabel = document.getElementById("userLabel");
+      const openAuthBtn = document.getElementById("openAuthBtn");
+      const logoutBtn = document.getElementById("logoutBtn");
 
-    function closeProductDetailModal() {
-      activeDetailProductId = null;
-      if (!productDetailModal) return;
-      productDetailModal.classList.add("hidden");
-      productDetailModal.classList.remove("flex");
-    }
-
-    if (productDetailModal) {
-      productDetailModal.addEventListener("click", (e) => {
-        if (e.target === productDetailModal) closeProductDetailModal();
-      });
-    }
-
-    function openProductDetailModal(productId) {
-      const item = products.find((p) => p.id === productId);
-      if (!item || !productDetailModal || !productDetailContent) return;
-      activeDetailProductId = productId;
-
-      const priceNum = Number(item.price) || 0;
-      const safeName = escapeHtml(item.name || "Untitled Item");
-      const safeShop = escapeHtml(item.shop || "Local Shop");
-      const safeArea = escapeHtml(item.area || "The Gambia");
-      const safeCat = escapeHtml(item.category || "Local Goods");
-      const safeDesc = escapeHtml(item.description || "Contact seller for full item details.");
-      const safePhone = escapeHtml(item.phone || "+220 300 0000");
-      const fallbackImg = `https://placehold.co/800x500/ecfdf5/065f46?text=${encodeURIComponent(item.name || "GamCart")}`;
-      const imgSrc = item.imageUrl || fallbackImg;
-      const waUrl = getWhatsAppUrl(item.phone, item.shop, item.name, priceNum);
-      const telUrl = getCallUrl(item.phone);
-
-      const isSellerOwner =
-        Boolean(currentUser && currentUser.email && item.ownerEmail && currentUser.email === item.ownerEmail) ||
-        currentUserRole === "seller";
-
-      const sellerSplitHtml = isSellerOwner
-        ? `
-          <div class="bg-emerald-50 border border-emerald-200 rounded-2xl p-3.5 text-xs text-emerald-950">
-            <div class="font-bold mb-1">Seller Payout Breakdown (Visible to Sellers)</div>
-            <div class="flex flex-wrap gap-x-5 gap-y-1">
-              <span>Seller keeps 99%: <strong>GMD ${(priceNum * 0.99).toFixed(2)}</strong></span>
-              <span>GamCart 1% fee: <strong>GMD ${(priceNum * 0.01).toFixed(2)}</strong></span>
-            </div>
-          </div>
-        `
-        : "";
-
-      productDetailContent.innerHTML = `
-        <div class="relative bg-slate-100">
-          <img
-            src="${escapeHtml(imgSrc)}"
-            alt="${safeName}"
-            onerror="this.onerror=null;this.src='${fallbackImg}';"
-            class="w-full h-60 sm:h-72 object-cover"
-          />
-          <button
-            type="button"
-            id="closeDetailModalBtn"
-            aria-label="Close product details"
-            class="absolute top-3.5 right-3.5 w-9 h-9 rounded-full bg-white/95 hover:bg-white text-slate-900 shadow-md flex items-center justify-center font-bold text-sm cursor-pointer"
-          >
-            ✕
-          </button>
-          <span class="absolute bottom-3 left-3 px-3 py-1 rounded-full text-xs font-semibold bg-white/95 text-slate-800 shadow-2xs">
-            ${getCategoryBadgeIcon(item.category)} ${safeCat}
-          </span>
-        </div>
-
-        <div class="p-5 sm:p-6 space-y-4">
-          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
-            <div>
-              <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900">${safeName}</h2>
-              <p class="text-xs sm:text-sm text-slate-600 mt-1">
-                Sold by <strong class="text-slate-900">${safeShop}</strong> • ${safeArea}
-              </p>
-            </div>
-            <div class="text-xl sm:text-2xl font-extrabold text-emerald-700 shrink-0">
-              GMD ${priceNum.toLocaleString()}
-            </div>
-          </div>
-
-          <div class="border-t border-slate-200 pt-3">
-            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5">Description</h3>
-            <p class="text-sm text-slate-700 leading-relaxed whitespace-pre-line">${safeDesc}</p>
-          </div>
-
-          <div class="bg-slate-50 border border-slate-200 rounded-2xl p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
-            <div>
-              <span class="text-slate-500">Seller Contact:</span>
-              <strong class="text-slate-900 ml-1">${safePhone}</strong>
-            </div>
-            <span class="text-slate-500">Area: <strong class="text-slate-800">${safeArea}</strong></span>
-          </div>
-
-          ${sellerSplitHtml}
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-            <a
-              href="${waUrl}"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="w-full py-3 px-4 rounded-full text-sm font-bold bg-emerald-700 hover:bg-emerald-800 text-white text-center shadow-sm transition"
-            >
-              WhatsApp Seller
-            </a>
-            <a
-              href="${telUrl}"
-              class="w-full py-3 px-4 rounded-full text-sm font-bold bg-slate-900 hover:bg-slate-800 text-white text-center shadow-sm transition"
-            >
-              Call Seller
-            </a>
-          </div>
-        </div>
-      `;
-
-      productDetailModal.classList.remove("hidden");
-      productDetailModal.classList.add("flex");
-
-      const closeBtn = document.getElementById("closeDetailModalBtn");
-      if (closeBtn) closeBtn.addEventListener("click", closeProductDetailModal);
-    }
-
-    function renderProducts() {
-      const container = document.getElementById("productList");
-      if (!container) return;
-
-      const filtered = products.filter((p) => {
-        const matchesArea = selectedArea === "ALL" || p.area === selectedArea;
-        const matchesCategory = selectedCategory === "ALL" || p.category === selectedCategory;
-        const haystack = `${p.name || ""} ${p.shop || ""} ${p.area || ""} ${p.category || ""} ${p.description || ""}`.toLowerCase();
-        const matchesQuery = !searchQuery || haystack.includes(searchQuery);
-        return matchesArea && matchesCategory && matchesQuery;
-      });
-
-      if (filtered.length === 0) {
-        container.innerHTML = `
-          <div class="col-span-full editorial-card rounded-3xl p-8 text-center space-y-2">
-            <p class="text-base font-bold text-slate-900">No matching listings found</p>
-            <p class="text-xs sm:text-sm text-slate-500">Try clearing your search or switching area/category filters.</p>
-          </div>
-        `;
-        return;
+      if (user) {
+        currentUserRole = user.displayName || currentUserRole || "buyer";
+        if (userLabel) userLabel.textContent = user.email || "Signed In";
+        if (openAuthBtn) openAuthBtn.style.display = "none";
+        if (logoutBtn) logoutBtn.style.display = "";
+      } else {
+        currentUserRole = "buyer";
+        if (userLabel) userLabel.textContent = "Guest";
+        if (openAuthBtn) openAuthBtn.style.display = "";
+        if (logoutBtn) logoutBtn.style.display = "none";
       }
 
-      container.innerHTML = filtered
-        .map((p) => {
-          const priceNum = Number(p.price) || 0;
-          const safeName = escapeHtml(p.name || "Untitled Item");
-          const safeShop = escapeHtml(p.shop || "Local Shop");
-          const safeArea = escapeHtml(p.area || "The Gambia");
-          const safeCat = escapeHtml(p.category || "Local Goods");
-          const safeDesc = escapeHtml(p.description || "");
-          const safePhone = escapeHtml(p.phone || "+220 300 0000");
-          const fallbackImg = `https://placehold.co/600x400/ecfdf5/065f46?text=${encodeURIComponent(p.name || "GamCart")}`;
-          const imgSrc = p.imageUrl || fallbackImg;
-          const waUrl = getWhatsAppUrl(p.phone, p.shop, p.name, priceNum);
-          const telUrl = getCallUrl(p.phone);
-
-          const isSellerOwner =
-            Boolean(currentUser && currentUser.email && p.ownerEmail && currentUser.email === p.ownerEmail) ||
-            currentUserRole === "seller";
-
-          const sellerNote = isSellerOwner
-            ? `<p class="text-[11px] font-medium text-emerald-800 bg-emerald-50 border border-emerald-200/80 rounded-lg px-2.5 py-1">Seller keeps 99%: GMD ${(priceNum * 0.99).toFixed(2)}</p>`
-            : "";
-
-          return `
-            <article
-              data-product-id="${escapeHtml(p.id)}"
-              class="listing-card editorial-card rounded-2xl overflow-hidden flex flex-col justify-between cursor-pointer"
-            >
-              <div>
-                <div class="relative bg-slate-100 h-44 overflow-hidden">
-                  <img
-                    src="${escapeHtml(imgSrc)}"
-                    alt="${safeName}"
-                    onerror="this.onerror=null;this.src='${fallbackImg}';"
-                    class="w-full h-full object-cover"
-                  />
-                  <span class="absolute top-2.5 left-2.5 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-white/95 text-slate-800 shadow-2xs">
-                    ${getCategoryBadgeIcon(p.category)} ${safeCat}
-                  </span>
-                  <span class="absolute bottom-2.5 right-2.5 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-slate-900/80 text-white">
-                    ${safeArea}
-                  </span>
-                </div>
-
-                <div class="p-4 space-y-2">
-                  <div class="flex items-start justify-between gap-2">
-                    <h3 class="text-sm sm:text-base font-bold text-slate-900 line-clamp-1">${safeName}</h3>
-                    <span class="text-sm sm:text-base font-extrabold text-emerald-700 shrink-0">
-                      GMD ${priceNum.toLocaleString()}
-                    </span>
-                  </div>
-
-                  <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed">${safeDesc}</p>
-
-                  <div class="text-[11px] text-slate-500 pt-1 flex items-center justify-between gap-2">
-                    <span class="font-semibold text-slate-700 truncate">${safeShop}</span>
-                    <span class="truncate">${safePhone}</span>
-                  </div>
-
-                  ${sellerNote}
-                </div>
-              </div>
-
-              <div class="px-4 pb-4 pt-2 border-t border-slate-100 grid grid-cols-2 gap-2" onclick="event.stopPropagation()">
-                <a
-                  href="${waUrl}"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="py-2 px-3 rounded-full text-xs font-bold bg-emerald-700 hover:bg-emerald-800 text-white text-center transition"
-                >
-                  WhatsApp
-                </a>
-                <a
-                  href="${telUrl}"
-                  class="py-2 px-3 rounded-full text-xs font-bold bg-slate-100 hover:bg-slate-200 text-slate-800 text-center transition"
-                >
-                  Call
-                </a>
-              </div>
-            </article>
-          `;
-        })
-        .join("");
-
-      container.querySelectorAll("article[data-product-id]").forEach((card) => {
-        card.addEventListener("click", () => openProductDetailModal(card.dataset.productId));
-      });
-    }
-
-    async function loadProducts() {
-      try {
-        const q = query(collection(db, "products"), orderBy("createdAt", "desc"));
-        const snap = await getDocs(q);
-        const cloudItems = snap.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-        products = cloudItems.length > 0 ? cloudItems : starterProducts.map((item, idx) => ({ id: `starter-${idx}`, ...item }));
-      } catch (err) {
-        console.warn("Falling back to starter listings:", err);
-        products = starterProducts.map((item, idx) => ({ id: `starter-${idx}`, ...item }));
-      }
+      loadSavedPostsForUser();
       renderProducts();
-    }
+      renderSellerListings();
+      renderSavedPostsView();
+      renderProfileView();
+    });
 
     loadProducts();
   </script>
